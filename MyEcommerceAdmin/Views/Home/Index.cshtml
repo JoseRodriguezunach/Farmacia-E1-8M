@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Mi farmacia";@*Custom*@
+    Layout = "~/Views/Shared/_Layout1.cshtml";
+}
+
+<style>
+    .aa-browse-btn {
+        display: inline-block;
+        font-size: 16px;
+        padding: 12px 18px;
+        color: #a94442;
+    }
+</style>
+
+<!-- Start slider -->
+<section id="aa-slider">
+    <div class="aa-slider-area">
+        <div id="sequence" class="seq">
+            <div class="seq-screen">
+                <ul class="seq-canvas">
+
+                    <!-- single slide item -->
+                    @foreach (var item in @ViewBag.Slider)
+                    {
+                        <li>
+                            <div class="seq-model">
+                                <img data-seq src="@item.ImageURL" alt="@item.AltText" />
+                            </div>
+                            <div class="seq-title">
+                                @*<span data-seq>@item.OfferTag</span>*@
+                                @*<h2 data-seq>@item.Title</h2>*@
+                                @*<p data-seq>@item.Description</p>*@
+                                @*<a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">@item.BtnText</a>*@
+                            </div>
+                        </li>
+}
+                    <!-- end single slide item -->
+
+                </ul>
+            </div>
+            <!-- slider navigation btn -->
+            <fieldset class="seq-nav" aria-controls="sequence" aria-label="Slider buttons">
+                <a type="button" href="" class="seq-prev" aria-label="Previous"><span class="fa fa-angle-left"></span></a>
+                <a type="button" href="" class="seq-next" aria-label="Next"><span class="fa fa-angle-right"></span></a>
+            </fieldset>
+        </div>
+    </div>
+</section>
+<!-- / slider -->
+
+
